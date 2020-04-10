@@ -7,6 +7,8 @@ var connection = mysql.createConnection({
     database: 'Creiba'
 })
 
-module.exports({
-    connection
-})
+module.exports = {
+    connection: connection.connect(),
+    close: connection.end(),
+    query: connection
+}

@@ -1,9 +1,10 @@
 const mysql = require("mysql");
 
 var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: 'localhost:',
+    port: '5432',
+    user: 'postgres',
+    password: 'pg123',
     database: 'Creiba'
 })
 

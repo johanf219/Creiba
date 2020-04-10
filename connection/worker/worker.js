@@ -3,16 +3,14 @@ const db = require("../mysql");
 var ErrMissingNationalID = new Error("missing national id");
 
 function storeWorker(jsonInput) {
-    let body = JSON.parse(jsonInput);
-
-    /*db.connection()
-    db.query("", (err, _, _) => {
+    db.connection()
+    db.query(`INSERT INTO trabador VALUES()`, (err, _, _) => {
         if (err) {
             throw err
         }
     })
     db.close()
-*/
+
     return null;
 }
 

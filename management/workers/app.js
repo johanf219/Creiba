@@ -22,7 +22,7 @@ function handle(httpResponse) {
         return buildJSONResponse(500, err)
     }
 
-    return buildJSONResponse(200, "worker_successfull_indexed");
+    return buildJSONResponse(200, 'worker_successfull_indexed');
 }
 
 /* 
@@ -30,16 +30,17 @@ httpResponse
 {
     "nationalID": "11", "name": "johan", "lastName": "florez", "phone": "1212", "password": "*",
     "confirmPassword": "*", "email": "j@gmail.com", "address": "cra212", "profilePhoto": "base64",
-    "documentPhoto": "base64", servicios {}
+    "documentPhoto": "base64", servicios: [{},{}]
 }
 */
 
 function buildJSONResponse(status, message) {
-    return JSON.parse(`"{"status": ${status}, "message": ${message}}"`)
+    return JSON.parse(`{"status": ${status}, "message": "${message}"}`)
 }
 
 function validateInputs(httpResponse) {
-    let body = JSON.parse(httpResponse);
+    let body = JSON.parse(httpResponse)
+
     if (body.nationalID == "") {
         return ErrMissingNationalID
     }
@@ -83,6 +84,6 @@ function validateInputs(httpResponse) {
     return null;
 }
 
-var test = { "nationalID": "11", "name": "johan", "lastName": "florez", "phone": "1212", "password": "*", "confirmPassword": "*", "email": "j@gmail.com", "address": "cra212", "profilePhoto": "base64", "documentPhoto": "base64", "servicios": "{}" }
+var test = '{"nationalID": "11", "name": "johan", "lastName": "florez", "phone": "1212", "password": "*", "confirmPassword": "*", "email": "j@gmail.com", "address": "cra212", "profilePhoto": "base64", "documentPhoto": "base64", "servicios": "{}"}';
 
 handle(test)

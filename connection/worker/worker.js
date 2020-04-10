@@ -3,7 +3,7 @@ const db = require("../mysql");
 var ErrMissingNationalID = new Error("missing national id");
 
 function storeWorker(jsonInput) {
-    let body = JSON.parse(httpResponse);
+    let body = JSON.parse(jsonInput);
 
     /*db.connection()
     db.query("", (err, _, _) => {

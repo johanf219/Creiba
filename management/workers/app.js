@@ -88,3 +88,7 @@ const test = {
 };
 
 handle(test);
+
+module.exports = {
+    handle,
+};
